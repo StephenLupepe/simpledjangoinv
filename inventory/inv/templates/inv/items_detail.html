@@ -1,0 +1,14 @@
+{% extends "inv/base.html" %}
+{% block content %}
+<h2 class="mt-5">{{ object.name }} Details</h2>
+    <article>
+        <small>Updated: {{ object.date_posted }}</small>
+        <p>Type: {{ object.type }}</p>
+        <p>Stock: {{ object.num }}</p>
+        <p>{{ object.desc}}</p>
+    </article>
+<div>
+    <a href="{% url 'item-update' object.pk %}" class="btn btn-warning">Update</a>
+    <a href="{% url 'item-delete' object.pk %}" class="btn btn-danger">Delete</a>
+</div>
+{% endblock content %}
